@@ -9,7 +9,7 @@ pipeline {
     registyUrl = "liliacr.azurecr.io"
     IMAGE_NAME = "nodejswebapp"
     IMAGE_TAG = "v1.0.0"
-    registryCredential  = "lili-credentials-ACR"
+    registryCredential  = "lili-acr-credentials-id"
     }
     stages { 
         stage('SCM Checkout') {
