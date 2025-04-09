@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodesy-deployment
+  name: nodejs-deployment
   labels:
-    app: nodesy-app
+    app: nodejs-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nodesy-app
+      app: nodejs-app
   template:
     metadata:
       labels:
-        app: nodesy-app
+        app: nodejs-app
     spec:
       containers:
-        - name: nodesy-container
-          image: boboacr.azurecr.io/nodejswebapp:v1.0.0
+        - name: nodejs-container
+          image: liliacr.azurecr.io/nodejswebapp:v1.0.0
           ports:
             - containerPort: 3000
 
@@ -25,10 +25,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nodesy-service
+  name: nodejs-service
 spec:
   selector:
-    app: nodesy-app
+    app: nodejs-app
   ports:
     - protocol: TCP
       port: 3000
